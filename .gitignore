@@ -1,4 +1,4 @@
 __pycache__
-output-*
+out*
 settings.json
 .env

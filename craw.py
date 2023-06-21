@@ -11,11 +11,13 @@ def craw(
     count=1,
     callback: Callable[str, Optional[int]] = None,
     model="gpt-4",
+    show_output=True,
+    headless=False,
 ) -> str:
     output = []
 
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=False)
+        browser = playwright.chromium.launch(headless=headless)
         context = browser.new_context()
         page = context.new_page()
 
@@ -46,10 +48,11 @@ def craw(
                     "div:nth-child(3) > .chat-message-meta > .chat-toolbar-icon"
                 ).click()
 
-                print(
-                    "generating... wait:%ds model:%s last count:%d content:%s"
-                    % (t, model, count - last_count + 1, pyperclip.paste())
-                )
+                if(show_output):
+                    print(
+                        "generating... wait:%ds model:%s last count:%d content:%s"
+                        % (t, model, count - last_count + 1, pyperclip.paste())
+                    )
                 time.sleep(1)
                 t += 1
 
