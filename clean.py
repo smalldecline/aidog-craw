@@ -12,6 +12,7 @@ def is_valid_json_array(input_str):
         return False
 
 def check_json_files_in_folder(folder_path):
+    invalid_files = []
     for file in os.listdir(folder_path):
         if file.endswith(".json"):
             file_path = os.path.join(folder_path, file)
@@ -19,11 +20,17 @@ def check_json_files_in_folder(folder_path):
             with open(file_path, "r", encoding="utf-8") as f:
                 content = f.read()
                 is_valid = is_valid_json_array(content)
-                print(f"{file}: {is_valid}")
             if not is_valid:
-                os.remove(file_path)
+                invalid_files.append(file_path)
+                os.rename(file_path, file_path + ".invalid")
+    return invalid_files
 
 
 # 示例
 folder_path = "out"
-check_json_files_in_folder(folder_path)
+invalid_files = check_json_files_in_folder(folder_path)
+
+if(len(invalid_files)==0):
+    print("All files are valid.")
+else:
+    print("Invalid files: ", invalid_files)
