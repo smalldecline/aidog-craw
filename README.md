@@ -1,18 +1,30 @@
 # AI dog 自动脚本
 
-依赖：
+### 安装依赖：
 
-```
-playwright
+playwright  
+参考这个网站
+https://playwright.dev/python/docs/intro
+
 pyperclip
-```
+python-dotenv
+直接包管理器安装
+
 
 ### 如何使用
+在当前目录下创建.env文件，填写ACCOUNT和PASSWORD
+示例(.env):
+```
+ACCOUNT=123456789
+PASSWORD=123456789
+```
+或者直接在test_craw.py里填写account和password
 
-在test_craw.py里填写account和password
+然后在prompt.md里填写prompt
 
 运行 test_craw.py 查看运行效果
 
+test_craw很简单你可以自行修改
 
 ### 简介
 
