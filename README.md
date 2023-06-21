@@ -7,9 +7,14 @@ playwright
 pyperclip
 ```
 
+### 如何使用
+
 在test_craw.py里填写account和password
 
 运行 test_craw.py 查看运行效果
+
+
+### 简介
 
 ```
 def craw(
