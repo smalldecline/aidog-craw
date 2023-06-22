@@ -60,7 +60,7 @@ def start_browser(browserId):
             print("[task finished] - browser_id:%d" % browserId)
             exit(0)
 
-        print("[data generated] - browser_id:%d size:%d total:%d progress:%.1f speed:%.2f json/s" % (browserId,size, total_size,total_size/total_count, speed))
+        print("[data generated] - browser_id:%d size:%d total:%d progress:%.2f speed:%.2f json/s" % (browserId,size, total_size,total_size/total_count, speed))
 
     output = craw.craw(account, password, prompt, 1000, my_callback, "gpt-4",show_output=False, headless=headless)
 
