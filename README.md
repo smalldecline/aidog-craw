@@ -13,14 +13,18 @@ python-dotenv
 
 ### 如何使用
 在当前目录下创建.env文件，填写ACCOUNT和PASSWORD以及相关参数
+调整browser_count来调整并发数
+4个浏览器并发大约消耗1gb内存
+headless为是否不显示浏览器
 
 示例(.env):
 ```
 ACCOUNT=123456789
 PASSWORD=123456789
 BROWSER_COUNT=2
-BLOCK_COUNT_PER_BROWSER=2
+TOTAL_COUNT=2000
 HEADLESS=true
+OUT_DIR=./out
 
 ```
 

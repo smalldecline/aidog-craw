@@ -12,9 +12,9 @@ global block_count_per_browser
 account = os.getenv("ACCOUNT")
 password = os.getenv("PASSWORD")
 browser_count = int( os.getenv("BROWSER_COUNT"))
-block_count_per_browser = int(os.getenv("BLOCK_COUNT_PER_BROWSER"))
+total_count = int(os.getenv("TOTAL_COUNT"))
 headless = os.getenv("HEADLESS") == "true"
-
+out_dir = os.getenv("OUT_DIR")
 
 total_size = 0
 
@@ -52,17 +52,23 @@ def start_browser(browserId):
         t = time.time() - start_time
         speed = total_size / t
 
-        with open("out/b%d-%d.json" % (browserId,count), "w") as f:
+        with open("%s/b%d-%d.json" % (out_dir,browserId,count), "w") as f:
             f.write(content)
 
-        print("[data generated] - browser_id:%d size:%d last_count:%d total:%d speed:%.2f json/s" % (browserId,size,block_count_per_browser-count, total_size, speed))
+        if(total_size >= total_count):
+            print("[task finished] - browser_id:%d" % browserId)
+            exit(0)
 
-    output = craw.craw(account, password, prompt, block_count_per_browser, my_callback, "gpt-4",show_output=False, headless=headless)
+        print("[data generated] - browser_id:%d size:%d total:%d progress:%.1f speed:%.2f json/s" % (browserId,size, total_size,total_size/total_count, speed))
 
+    output = craw.craw(account, password, prompt, 1000, my_callback, "gpt-4",show_output=False, headless=headless)
+
+print("[program started] - browser_count:%d total_count:%d outdir:%s" % (browser_count, total_count,out_dir))
 
 threads = []
 for i in range(browser_count):
     t = threading.Thread(target=start_browser, args=(i,))
     threads.append(t)
     t.start()
+    print("[browser started] - id:%d" % i)
 

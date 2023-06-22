@@ -26,8 +26,7 @@ def check_json_files_in_folder(folder_path):
     return invalid_files
 
 
-# 示例
-folder_path = "out"
+folder_path = "./out"
 invalid_files = check_json_files_in_folder(folder_path)
 
 if(len(invalid_files)==0):
