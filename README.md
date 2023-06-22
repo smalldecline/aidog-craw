@@ -25,7 +25,7 @@ BROWSER_COUNT=2
 TOTAL_COUNT=2000
 HEADLESS=true
 OUT_DIR=./out
-
+PROMPT_PATH=./prompt.md
 ```
 
 运行run_craw开始生产

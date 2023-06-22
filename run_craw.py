@@ -15,12 +15,13 @@ browser_count = int( os.getenv("BROWSER_COUNT"))
 total_count = int(os.getenv("TOTAL_COUNT"))
 headless = os.getenv("HEADLESS") == "true"
 out_dir = os.getenv("OUT_DIR")
+prompt_path = os.getenv("PROMPT_PATH")
 
 total_size = 0
 
 
 prompt = ""
-with open("prompt_test.md", "r") as f:
+with open(prompt_path, "r") as f:
     prompt = f.read()
 
 
@@ -63,7 +64,7 @@ def start_browser(browserId):
 
     output = craw.craw(account, password, prompt, 1000, my_callback, "gpt-4",show_output=False, headless=headless)
 
-print("[program started] - browser_count:%d total_count:%d outdir:%s" % (browser_count, total_count,out_dir))
+print("[program started] - browser_count:%d total_count:%d prompt:%s outdir:%s" % (browser_count, total_count,prompt_path,out_dir))
 
 threads = []
 for i in range(browser_count):
