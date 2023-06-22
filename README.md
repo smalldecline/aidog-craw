@@ -24,16 +24,7 @@ HEADLESS=true
 
 ```
 
-或者直接在test_craw.py里填写account和password
-
-然后在prompt.md里填写prompt
-
-修改test_craw.py里的参数,然后运行
-
-运行 test_craw.py 查看运行效果
-
-test_craw很简单你可以自行修改
-
+运行run_craw开始生产
 运行clean进行json格式校验
 
 ### 简介
