@@ -14,13 +14,41 @@
 
 # Topic
 
-1. Inventory management
-2. Pricing optimization
-3. Risk analysis and management
-4. Credit scoring
-5. Fraud detection in financial transactions
-6. Healthcare data analysis
-7. Genomics and bioinformatics analysis
+1. Data quality and integrity
+2. Missing data
+3. Outliers detection and handling
+4. Data preprocessing and cleaning
+5. Feature selection and extraction
+6. Data normalization and scaling
+7. Dealing with imbalanced datasets
+8. Dimensionality reduction
+9. Choosing the right algorithm/model
+10. Overfitting and underfitting
+11. Cross-validation and model evaluation
+12. Hyperparameter tuning
+13. Model interpretability and explainability
+14. Handling categorical variables
+15. Handling continuous variables
+16. Time series analysis
+17. Forecasting and prediction
+18. Clustering analysis
+19. Classification problems
+20. Regression analysis
+21. Ensemble methods
+22. Bias and fairness in machine learning
+23. Ethics in data analysis
+24. Data privacy and security
+25. Model deployment and productionization
+26. Model monitoring and maintenance
+27. Performance optimization
+28. Scalability and handling large datasets
+29. Real-time data analysis
+30. Streaming data analysis
+31. Visualization techniques
+32. Data storytelling and communication
+33. A/B testing and experimentation
+34. Natural Language Processing (NLP)
+35. Sentiment analysis
 
 # Notice
 

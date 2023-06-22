@@ -44,11 +44,11 @@ def craw(
             finished_generating = False
             t = 0
             while not finished_generating:
-                page.locator(
-                    "div:nth-child(3) > .chat-message-meta > .chat-toolbar-icon"
-                ).click()
-
                 if(show_output):
+                    page.locator(
+                        "div:nth-child(3) > .chat-message-meta > .chat-toolbar-icon"
+                    ).click()
+
                     print(
                         "generating... wait:%ds model:%s last count:%d content:%s"
                         % (t, model, count - last_count + 1, pyperclip.paste())

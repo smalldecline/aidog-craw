@@ -12,12 +12,16 @@ python-dotenv
 
 
 ### 如何使用
-在当前目录下创建.env文件，填写ACCOUNT和PASSWORD
+在当前目录下创建.env文件，填写ACCOUNT和PASSWORD以及相关参数
 
 示例(.env):
 ```
 ACCOUNT=123456789
 PASSWORD=123456789
+BROWSER_COUNT=2
+BLOCK_COUNT_PER_BROWSER=2
+HEADLESS=true
+
 ```
 
 或者直接在test_craw.py里填写account和password
@@ -42,6 +46,8 @@ def craw(
     count=1,
     callback: Callable[str, Optional[int]] = None,
     model="gpt-4",
+    show_output=True,
+    headless=False,
 ) -> str:
 ```
 
