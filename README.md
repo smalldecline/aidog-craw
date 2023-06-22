@@ -31,6 +31,11 @@ PROMPT_PATH=./prompt.md
 运行run_craw开始生产
 运行clean进行json格式校验
 
+### 注意
+根据自己的电脑调整并发数
+
+不要动剪贴板
+
 ### 简介
 
 ```
